@@ -10,11 +10,10 @@ class CashRegister
   
   def add_item(item, price, quantity = 1)
     @total += price * quantity
-    item.each do |each_item|
-      @items << each_item * quantity
+    
     @last_transaction = price * quantity
   end
-  end
+  
   
   def apply_discount
     @total -= @total * @discount.to_f/100
